@@ -7,28 +7,16 @@ let cells = document.getElementsByClassName("gamecell");
 //GameBoard module
 const gameBoard = (() => {
     const myBoard = [
-      ['-', '-', 'x'],
-      ['-', 'x', '-'],
-      ['x', '-', '-']];
+      ['-', '-', '-'],
+      ['-', '-', '-'],
+      ['-', '-', '-']];
   
     const print = () => {
       for (let i = 0; i < 3; i++) {
         console.log(myBoard[i]);
       }
     }
-
-    const userInput = (player, inputColumn, inputRow) => {
-        console.log(myBoard[inputColumn][inputRow]);
-            if(myBoard[inputColumn][inputRow] === '-')
-                myBoard[inputColumn][inputRow] = player.getSymbol();
-            else
-                console.log('Invalid input');
-                
-            
-
-    }
-  
-    return { myBoard, print, userInput}
+    return { myBoard, print}
   
   })();
   
@@ -39,17 +27,19 @@ const gameBoard = (() => {
     return {getSymbol};
   }
 
-  const player_ = Player('-');
-  const playerx = Player('x');
-  let currentPlayer = playerx;
+  const playerO = Player('O');
+  const playerX = Player('X');
+  let currentPlayer = playerX;
 
   const switchPlayer = function(){
-    if (currentPlayer === player_)
-        currentPlayer = playerx;
+    if (currentPlayer.getSymbol() === 'O')
+        currentPlayer = playerX;
     else
-        currentPlayer = player_;
+        currentPlayer = playerO;
+    
   }
-  
+
+ 
 
  
 
@@ -58,12 +48,20 @@ const gameBoard = (() => {
 //Display symbol by clicking
   let displaySymbol = function(){
     this.innerHTML = currentPlayer.getSymbol();
+    switchPlayer();
   }
 
-  Array.from(cells).forEach(function(cell) {
-    cell.addEventListener('click', displaySymbol);
-  });
+  const startGame = () => {
+    Array.from(cells).forEach(function(cell) {
+      cell.innerHTML = '';
+      cell.addEventListener('click', displaySymbol, {once:true});
+    });
 
+    currentPlayer = playerX;
+  }
+
+  startGame();
+  
   
 
  

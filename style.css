@@ -3,6 +3,10 @@
 
 }
 
+:root{
+    --symbol-size:90px;
+}
+
 body{
     font-family:'Anek Telugu';
     margin: 0px;
@@ -12,10 +16,11 @@ body{
 
 .gameBoard{
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    gap: 10px;
-
+    /* justify-content: center;
+    align-content: center; */
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    
 
 }
 
@@ -24,11 +29,28 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .gamecell:hover{
     cursor: pointer;
     background-color: burlywood;
+}
+
+.gamecell:first-child,.gamecell:nth-child(2),.gamecell:nth-child(3){
+    border-top: none;
+}
+
+.gamecell:nth-child(3n + 1){
+    border-left: none;
+}
+
+.gamecell:nth-child(3n + 3){
+    border-right: none;
+}
+
+.gamecell:last-child,.gamecell:nth-child(7),.gamecell:nth-child(8){
+    border-bottom: none;
 }
 
 .wrapper{
