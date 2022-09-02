@@ -6,17 +6,16 @@ let cells = document.getElementsByClassName("gamecell");
 
 //GameBoard module
 const gameBoard = (() => {
-    const myBoard = [
-      ['-', '-', '-'],
-      ['-', '-', '-'],
-      ['-', '-', '-']];
+
+
+    const gameArray = Array(9).fill(null); //Array of null elements
   
     const print = () => {
       for (let i = 0; i < 3; i++) {
         console.log(myBoard[i]);
       }
     }
-    return { myBoard, print}
+    return {print, gameArray}
   
   })();
   

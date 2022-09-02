@@ -24,11 +24,17 @@ body{
 
 }
 
+
 .gamecell{
+    /* background: #ffffff; */
     border: solid blue;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 60px;
+    font-family: cursive;
+    color: black;
     
 }
 
