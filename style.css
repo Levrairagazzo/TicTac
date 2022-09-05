@@ -14,7 +14,7 @@ body{
     background-color: #fffbeb;
 }
 
-.gameBoard{
+#gameBoard{
     display: grid;
     /* justify-content: center;
     align-content: center; */

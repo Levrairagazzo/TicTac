@@ -11,20 +11,22 @@
     <div class="wrapper">
         <div class="header">
             <h1>Welcome to my Tic Tac Toe</h1>
+            <p id="turnUpdate">Status</p>
+            <p id="winnerUpdate"> Status of the game</p>
         </div>
-        <div class="gameBoard">
-            <div class="gamecell data-index="0" "></div>
-            <div class="gamecell data-index="1" "></div>
-            <div class="gamecell data-index="2" "></div>
-            <div class="gamecell data-index="3" "></div>
-            <div class="gamecell data-index="4" "></div>
-            <div class="gamecell data-index="5" "></div>
-            <div class="gamecell data-index="6" "></div>
-            <div class="gamecell data-index="7" "></div>
-            <div class="gamecell data-index="8" "></div>
+        <div id="gameBoard" data-user="johndoe">
+            <div class="gamecell" data-index="0"></div>
+            <div class="gamecell" data-index="1"></div>
+            <div class="gamecell" data-index="2"></div>
+            <div class="gamecell" data-index="3"></div>
+            <div class="gamecell" data-index="4"></div>
+            <div class="gamecell" data-index="5"></div>
+            <div class="gamecell" data-index="6"></div>
+            <div class="gamecell" data-index="7"></div>
+            <div class="gamecell" data-index="8"></div>
         </div>
 
-        <button id="switchButton" onclick="startGame()">Restart Game</button>
+        <button id="switchButton" onclick="resetGame()">Restart Game</button>
         <button id="switchButton" onclick="switchPlayer()">Switch Player</button>
 
     </div>
